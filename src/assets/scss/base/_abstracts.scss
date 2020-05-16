@@ -1,0 +1,14 @@
+// -- Colors Variables -- //
+
+$color-primary: #2fbdbd;
+$color-secondary: #f2fdff;
+$color-tertiary: darken($color-primary, 20%);
+
+$color-white: #fff;
+$color-black: #000;
+$color-light-grey: #e5edef;
+
+$gradient-primary: linear-gradient($color-primary, $color-tertiary);
+
+
+$font-default: 'Lato', sans-serif !default;

@@ -2,22 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
-import {ApplicationHeaderComponent} from './components/application-header.component';
-import {SharedModule} from '../../shared.module';
+import {ResponsiveMenuDirective} from './directives/responsive.menu.directive';
 
 
 @NgModule({
   declarations: [
-    ApplicationHeaderComponent
+    ResponsiveMenuDirective
   ],
   exports: [
-    ApplicationHeaderComponent
+    ResponsiveMenuDirective
   ],
   imports: [
     CommonModule,
     NgbModule,
-    FormsModule,
-    SharedModule
+    FormsModule
   ]
 })
-export class ApplicationModule { }
+export class SharedModule { }

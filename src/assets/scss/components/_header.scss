@@ -1,0 +1,132 @@
+header {
+  display: flex;
+  align-items: center;
+  padding: 1% 2%;
+  width: 100%;
+  border-bottom: 1px solid $color-light-grey;
+  background-color: $color-white;
+
+  & .header__menu {
+    position: relative;
+    cursor: pointer;
+    top: 2px;
+    margin-right: 8%;
+
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  & .header__logo {
+    font-size: 1.4rem;
+    color: $color-primary;
+
+    &:hover {
+      color: darken($color-primary, 20%);
+      text-decoration: none;
+    }
+  }
+
+  & .header__main {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: 50%;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 30%;
+    }
+  }
+
+  & .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+    background-color:  $color-tertiary !important;
+  }
+
+  & .header__input {
+    display: none;
+
+    @include media-breakpoint-up(sm) {
+      width: 50%;
+      display: inline-flex;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 30%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 35%;
+    }
+
+    & input {
+      width: 100%;
+      border: none;
+      background-color: $color-secondary;
+      padding: 2% 3%;
+      border-radius: 10px 0 0 10px;
+
+      &::placeholder {
+        color: $color-tertiary;
+      }
+    }
+
+    & button {
+      background-color: $color-secondary;
+      border: none;
+      border-radius: 3px;
+      padding: 2% 3%;
+      color: $color-tertiary;
+    }
+  }
+
+  & .header__navigation {
+    display: none;
+
+    & li:not(:last-of-type) {
+      margin-right: 10%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      list-style: none;
+      display: inline-flex;
+      justify-content: center;
+      width: 30%;
+      margin-bottom: 0;
+    }
+  }
+
+  & .header__login {
+    display: none;
+
+    & .btn-primary {
+      margin-right: 10%;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: inline-flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 30%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      justify-content: space-around;
+      width: 20%;
+    }
+  }
+
+  & .header__input {
+    padding: 0 !important;
+  }
+}
+
+.header-active {
+  &:after {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+}

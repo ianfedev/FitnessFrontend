@@ -1,0 +1,21 @@
+.btn-outline-info {
+  border-radius: 30px;
+  color: $color-primary;
+  border: 1px solid $color-primary;
+
+  &:hover {
+    background-color: $color-primary;
+  }
+}
+
+.btn-primary {
+  color: $color-primary;
+  background-color: transparent;
+
+  &:hover {
+    color: darken($color-primary, 20%);
+    text-decoration: none;
+    background-color: transparent;
+    transition: .3s all;
+  }
+}
