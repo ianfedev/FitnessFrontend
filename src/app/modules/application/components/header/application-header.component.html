@@ -1,7 +1,8 @@
-<header id="header" class="header-active">
+<section class="header__sidebar" #responsiveSidebar></section>
+<header id="header">
   <section class="header__main">
     <span class="header__menu">
-      <button class="hamburger hamburger--elastic" type="button" appResponsiveMenu>
+      <button class="hamburger hamburger--elastic" type="button" appResponsiveMenu [sidebar]="responsiveSidebar" [blocking]="blocking">
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
@@ -25,3 +26,4 @@
     <a href="#" class="btn btn-outline-info">Registrate</a>
   </section>
 </header>
+<section #blocking></section>

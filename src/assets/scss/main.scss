@@ -2,8 +2,9 @@
 @import "vendors/bootstrap";
 
 @import "base/abstracts";
+@import "base/typography";
 
 @import "components/header";
 @import "components/button";
 
-@import "pages/typography";
+@import "pages/home";

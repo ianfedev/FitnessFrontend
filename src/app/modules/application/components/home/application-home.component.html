@@ -1,0 +1,14 @@
+<ngb-carousel *ngIf="images" class="slider ">
+  <ng-template ngbSlide>
+    <div class="home__slider">
+      <section class="home__image">
+        <img [src]="images[0]" alt="Random first slide">
+      </section>
+      <section class="home__slider-text">
+        <h1>Lorem Ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <a href="#" class="btn btn-primary-full">Click here</a>
+      </section>
+    </div>
+  </ng-template>
+</ngb-carousel>

@@ -1,0 +1,44 @@
+.home {
+
+  &__slider {
+    display: flex;
+    align-items: center;
+    background-color: #e2f8f8;
+    height: 300px;
+
+    @include media-breakpoint-up(md) {
+      height: 450px;
+      padding: 5%;
+    }
+
+    &-text {
+      width: 100%;
+      padding: 0 8%;
+      text-align: center;
+
+      @include media-breakpoint-up(sm) {
+        width: 50%;
+        text-align: left;
+      }
+
+    }
+
+  }
+
+  &__image {
+    display: none;
+
+    @include media-breakpoint-up(sm) {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+    }
+
+    & img {
+      height: 80%;
+    }
+  }
+
+}

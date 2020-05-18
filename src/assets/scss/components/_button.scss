@@ -19,3 +19,17 @@
     transition: .3s all;
   }
 }
+
+.btn-primary-full {
+  color: $color-white;
+  background-color: $color-primary;
+  border-radius: 30px;
+
+  &:hover {
+    color: darken($color-primary, 20%);
+    text-decoration: none;
+    background-color: transparent;
+    transition: .3s all;
+  }
+}
+
