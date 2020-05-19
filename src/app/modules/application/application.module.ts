@@ -6,15 +6,18 @@ import {ApplicationHeaderComponent} from './components/header/application-header
 import {SharedModule} from '../../shared.module';
 import {ApplicationHomeComponent} from './components/home/application-home.component';
 import {ApplicationRouting} from './application.routing';
+import {ApplicationFooterComponent} from './components/footer/application-footer.component';
 
 
 @NgModule({
   declarations: [
     ApplicationHeaderComponent,
+    ApplicationFooterComponent,
     ApplicationHomeComponent
   ],
   exports: [
-    ApplicationHeaderComponent
+    ApplicationHeaderComponent,
+    ApplicationFooterComponent
   ],
   imports: [
     CommonModule,

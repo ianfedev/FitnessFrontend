@@ -1,4 +1,4 @@
-<ngb-carousel *ngIf="images" class="slider ">
+<ngb-carousel *ngIf="images" class="slider">
   <ng-template ngbSlide>
     <div class="home__slider">
       <section class="home__image">
@@ -12,3 +12,84 @@
     </div>
   </ng-template>
 </ngb-carousel>
+<section class="home__recents container">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <section class="home__recents-title">
+        <h2>Videos recientes</h2>
+        <p>Los recién llegados</p>
+      </section>
+    </div>
+    <div class="col-12 col-md-6 pb-2 pb-md-0">
+      <ul ngbNav #videoNav="ngbNav" class="nav-tabs home__recents-nav">
+        <li ngbNavItem>
+          <a ngbNavLink>Gym</a>
+          <ng-template ngbNavContent>
+            <section class="row">
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </section>
+          </ng-template>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink>Yoga</a>
+          <ng-template ngbNavContent>
+            <section class="row">
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </section>
+          </ng-template>
+        </li>
+        <li ngbNavItem>
+          <a ngbNavLink>Deportes</a>
+          <ng-template ngbNavContent>
+            <section class="row">
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="col-6 home__recents-thumb">
+                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </section>
+          </ng-template>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 d-flex align-items-center">
+      <div class="home__recents-video d-none d-md-block">
+        <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div [ngbNavOutlet]="videoNav"></div>
+    </div>
+  </div>
+</section>
