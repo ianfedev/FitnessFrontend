@@ -1,5 +1,5 @@
 <section class="header__sidebar" #responsiveSidebar></section>
-<header id="header">
+<header *ngIf="!hidden" id="header">
   <section class="header__main">
     <span class="header__menu">
       <button class="hamburger hamburger--elastic" type="button" appResponsiveMenu [sidebar]="responsiveSidebar" [blocking]="blocking">

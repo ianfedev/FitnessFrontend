@@ -7,6 +7,7 @@ import {ApplicationModule} from './modules/application/application.module';
 import {SharedModule} from './shared.module';
 import {RouterModule} from '@angular/router';
 import {AppRouting} from './app.routing';
+import {VideoModule} from './modules/video/video.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {AppRouting} from './app.routing';
     NgbModule,
     SharedModule,
     ApplicationModule,
+    VideoModule,
     AppRouting,
     RouterModule
   ],

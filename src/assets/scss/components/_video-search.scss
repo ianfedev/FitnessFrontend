@@ -1,0 +1,46 @@
+.video-search {
+  width: 100%;
+  padding: 0 10% 5% 10%;
+  margin-bottom: 5%;
+
+  &__tags {
+    padding: 0;
+    list-style: none;
+
+    & li {
+      padding: 3% 2% 3% 0;
+      display: inline-block;
+    }
+  }
+
+  &__item {
+    background-color: $color-secondary;
+    padding: 3% 2%;
+
+    & h3 {
+      font-weight: 700;
+    }
+
+    & img {
+      width: 50%;
+    }
+  }
+
+  &__rating {
+    color: gold;
+  }
+
+}
+
+.video-filter {
+  padding: 2% 10%;
+
+  &__container {
+    padding: 2% 10%;
+
+    & a {
+      color: #212529;
+    }
+  }
+
+}

@@ -1,0 +1,75 @@
+<section class="video-filter">
+  <button type="button" class="btn btn-primary-full" (click)="collapsed = !collapsed" [attr.aria-expanded]="!collapsed" aria-controls="collapseExample">
+    <i class="fas fa-filter"></i> Filtros
+  </button>
+</section>
+<section class="video-filter__container text-center text-md-left" [ngbCollapse]="collapsed">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <section class="col-12 col-md-4">
+          <ul class="list-unstyled">
+            <li><strong>Órden de carga</strong></li>
+            <li><a href="#">Ayer</a></li>
+            <li><a href="#">Hace 1 semana</a></li>
+            <li><a href="#">Hace 1 mes</a></li>
+          </ul>
+        </section>
+        <section class="col-12 col-md-4">
+          <ul class="list-unstyled">
+            <li><strong>Categoría</strong></li>
+            <li><a href="#">Yoga</a></li>
+            <li><a href="#">Fitness</a></li>
+            <li><a href="#">Fatness</a></li>
+          </ul>
+        </section>
+        <section class="col-12 col-md-4">
+          <ul class="list-unstyled">
+            <li><strong>Categoría</strong></li>
+            <li><a href="#">Yoga</a></li>
+            <li><a href="#">Fitness</a></li>
+            <li><a href="#">Fatness</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+<ul class="video-search list-unstyled">
+  <li class="video-search__item">
+    <div class="row">
+      <div class="col-12 col-md-4 d-flex justify-content-center mb-3 mb-md-0">
+        <img src="assets/img/placeholder.jpg" alt="Image">
+      </div>
+      <div class="col-12 col-md-8">
+        <div class="row h-100 text-center text-md-left">
+          <div class="col-12 col-md-8">
+            <h3 class="video-search__title">Video Title</h3>
+            <ul class="video-search__tags">
+              <li>
+                <a href="#">
+                  <span class="badge badge-pill badge-primary">Primary</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="badge badge-pill badge-primary">Primary</span>
+                </a>
+              </li>
+            </ul>
+            <section class="video-search__rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </section>
+          </div>
+          <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+            <a href="#" class="btn btn-primary-full mt-2 mt-md-0">Ver video</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

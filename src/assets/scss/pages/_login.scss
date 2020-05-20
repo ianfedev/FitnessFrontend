@@ -1,0 +1,63 @@
+.login {
+
+  &__slider {
+    color: $white;
+    height: 100vh;
+  }
+
+  &__tip {
+    background: #1FA2FF;
+    background: -webkit-linear-gradient(135deg, #A6FFCB, #12D8FA, #1FA2FF);
+    background: linear-gradient(135deg, #A6FFCB, #12D8FA, #1FA2FF);
+
+    &-text {
+    }
+
+    &-image {
+      width: 40%;
+      display: inline-block;
+      margin-bottom: 20%;
+    }
+  }
+
+  &__back {
+    position: absolute;
+    top: 3%;
+    left: 5%;
+  }
+
+  &__card {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    background-color: $color-white;
+    padding: 3% 4%;
+    width: 90%;
+
+    @include media-breakpoint-up(lg) {
+      width: 55%;
+    }
+
+    & h2 {
+      font-weight: 700;
+    }
+
+    & p {
+      margin: 5% 0;
+
+      & a {
+        color: black;
+      }
+    }
+  }
+
+  &__section {
+    padding: 0;
+    height: 100vh;
+    background-image: url("https://i.imgur.com/PbnokQw.png");
+    background-position: top;
+    background-size: cover;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 5%;
+    }
+  }
+}

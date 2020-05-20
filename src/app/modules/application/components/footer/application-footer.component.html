@@ -1,7 +1,7 @@
-<svg class="figurine" viewBox="0 0 1920 232">
+<svg *ngIf="!hidden" class="figurine" viewBox="0 0 1920 232">
   <path d="M0,1080S198.5,869.75,605.75,899c0,0,423,99,663.75,0,0,0,263.25-114.75,540,0,0,0,97.25,50,110.5,66v115Z" transform="translate(0 -848)"/>
 </svg>
-<footer>
+<footer *ngIf="!hidden">
   <div class="container">
     <section class="row footer__inner">
       <div class="col-12 col-md-4">

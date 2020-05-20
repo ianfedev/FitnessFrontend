@@ -7,12 +7,16 @@ import {SharedModule} from '../../shared.module';
 import {ApplicationHomeComponent} from './components/home/application-home.component';
 import {ApplicationRouting} from './application.routing';
 import {ApplicationFooterComponent} from './components/footer/application-footer.component';
+import {ApplicationLoginComponent} from './components/login/application-login.component';
+import {ApplicationRegisterComponent} from './components/register/application-register.component';
 
 
 @NgModule({
   declarations: [
     ApplicationHeaderComponent,
     ApplicationFooterComponent,
+    ApplicationLoginComponent,
+    ApplicationRegisterComponent,
     ApplicationHomeComponent
   ],
   exports: [

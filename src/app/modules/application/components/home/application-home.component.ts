@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './application-home.component.html'
 })
 export class ApplicationHomeComponent {
+
   public images: string[];
 
   constructor() {

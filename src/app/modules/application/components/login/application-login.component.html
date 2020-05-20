@@ -1,0 +1,36 @@
+<section class="container-fluid p-0 overflow-hidden">
+  <div class="row">
+    <div class="col-12 col-lg-4 d-none d-lg-block login__tip">
+      <ngb-carousel *ngIf="images" class="login__slider d-flex align-items-center text-center">
+        <ng-template ngbSlide>
+          <div class="d-flex flex-column justify-content-center">
+            <section class="login__tip-text">
+              <img [src]="images[0]" class="login__tip-image" alt="Random first slide">
+              <h1>Lorem Ipsum</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </section>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="col-12 col-lg-8 login__section d-flex align-items-center justify-content-center">
+      <div class="login__back">
+        <a href="#" class="btn btn-primary-full">
+          <i class="fas fa-arrow-left"></i> Volver
+        </a>
+      </div>
+      <app-register *ngIf="registering" class="login__card"></app-register>
+      <section *ngIf="!registering" class="login__card">
+        <h2>Bienvenido de vuelta</h2>
+        <p>Inicia sesión para acceder a tu cuenta de FitnessApp. Si no tienes una cuenta registrate <a href="#">aquí</a>.</p>
+        <form #emailForm>
+          <input id="email" type="email" placeholder="Correo electrónico" class="form form-control mb-3">
+          <input id="password" type="password" placeholder="Contraseña" class="form form-control mb-3">
+          <button class="btn btn-primary-full btn-fluid p-2">
+            Iniciar sesión
+          </button>
+        </form>
+      </section>
+    </div>
+  </div>
+</section>
