@@ -2,9 +2,9 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-search',
-  templateUrl: './video-search.component.html'
+  templateUrl: './video-play.component.html'
 })
-export class VideoSearchComponent {
+export class VideoPlayComponent {
 
   public collapsed: boolean;
 

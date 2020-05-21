@@ -9,7 +9,7 @@ export class ApplicationLoginComponent {
   public registering: boolean;
 
   constructor() {
-    this.registering = false;
+    this.registering = true;
     this.images = [
       'assets/img/banner/1.png'
     ];

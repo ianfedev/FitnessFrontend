@@ -1,0 +1,61 @@
+.explore {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  margin-bottom: 5%;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    content: '';
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  & h2 {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 40px;
+    z-index: 2;
+    color: white;
+  }
+
+  &--fitness::after {
+    background: linear-gradient(145deg, rgba(#9d50bb, 0.2), rgba(#6e48aa, 0.8));
+  }
+
+  &--yoga::after {
+    background: linear-gradient(145deg, rgba(#ff4e50, 0.2), rgba(#f9d423, 0.8));
+  }
+
+  &--cardio::after {
+    background: linear-gradient(145deg, rgba(#00d2ff, 0.2), rgba(#3a7bd5, 0.8));
+  }
+
+  &--meditation::after {
+    background: linear-gradient(145deg, rgba(#aaffa9, 0.2), rgba(#11ffbd, 0.8));
+  }
+
+  &--biceps::after {
+    background: linear-gradient(145deg, rgba(#f2709c, 0.2), rgba(#ff9472, 0.8));
+  }
+
+  &--triceps::after {
+    background: linear-gradient(145deg, rgba(#C04848, 0.2), rgba(#480048, 0.8));
+  }
+
+}

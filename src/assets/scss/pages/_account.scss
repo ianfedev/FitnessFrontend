@@ -1,0 +1,29 @@
+.account {
+  position: relative;
+
+  &__background {
+    width: 100vw;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  &__info {
+    margin-top: 10%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__picture {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 100px
+  }
+
+}

@@ -1,0 +1,25 @@
+.ratings {
+  list-style: none;
+
+  & li {
+    display: flex;
+    align-items: center;
+  }
+
+  & img {
+    width: 20px;
+    height: 20px;
+    margin-right: 3%;
+  }
+
+  &__rate {
+    display: flex;
+    align-items: center;
+
+    & h3 {
+      text-transform: uppercase;
+      margin: 0 2% 0 0;
+      font-size: 18px;
+    }
+  }
+}
