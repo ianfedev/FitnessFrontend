@@ -1,0 +1,46 @@
+.admin-nav {
+  width: 100%;
+
+  & ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  & li {
+    display: inline-block;
+    margin: 3% 2%;
+
+    & a {
+      color: #212529;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &--active {
+    padding: 10px 12px !important;
+    border-radius: 30px !important;
+    color: $color-white !important;
+    background-color: $color-primary;
+  }
+
+}
+
+
+.admin-table {
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: 80%;
+  }
+
+  &__tag {
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: inline;
+    }
+  }
+}

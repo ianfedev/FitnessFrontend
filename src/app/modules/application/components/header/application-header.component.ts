@@ -7,9 +7,13 @@ import {Component, Input} from '@angular/core';
 export class ApplicationHeaderComponent {
 
   @Input() hidden: boolean;
+  @Input() logged: boolean;
+  public headerCollapsed: boolean;
 
   constructor() {
     this.hidden = false;
+    this.logged = true;
+    this.headerCollapsed = true;
   }
 
 }

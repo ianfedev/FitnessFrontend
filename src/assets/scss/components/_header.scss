@@ -193,6 +193,43 @@ header {
   & .header__input {
     padding: 0 !important;
   }
+
+  & .header__profile {
+    position: relative;
+
+    & button {
+      background: transparent;
+      border: none;
+    }
+
+    & svg {
+      margin-left: 5px;
+    }
+
+    &-responsive-icon {
+      display: inline;
+
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
+
+    & span {
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        display: inline;
+      }
+    }
+
+    &-dropdown {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      z-index: 30;
+    }
+  }
+
 }
 
 .header__sidebar {

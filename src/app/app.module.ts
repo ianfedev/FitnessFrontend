@@ -9,6 +9,7 @@ import {RouterModule} from '@angular/router';
 import {AppRouting} from './app.routing';
 import {VideoModule} from './modules/video/video.module';
 import {UserModule} from './modules/user/user.module';
+import {AdminModule} from './modules/admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {UserModule} from './modules/user/user.module';
     VideoModule,
     UserModule,
     AppRouting,
+    AdminModule,
     RouterModule
   ],
   providers: [],
