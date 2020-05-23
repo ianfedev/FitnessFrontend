@@ -15,7 +15,7 @@
     </div>
     <div class="col-12 col-lg-8 login__section d-flex align-items-center justify-content-center">
       <div class="login__back">
-        <a href="#" class="btn btn-primary-full">
+        <a routerLink="/" class="btn btn-primary-full">
           <i class="fas fa-arrow-left"></i> Volver
         </a>
       </div>
@@ -23,10 +23,32 @@
       <section *ngIf="!registering" class="login__card">
         <h2>Bienvenido de vuelta</h2>
         <p>Inicia sesión para acceder a tu cuenta de FitnessApp. Si no tienes una cuenta registrate <a href="#">aquí</a>.</p>
-        <form #emailForm>
-          <input id="email" type="email" placeholder="Correo electrónico" class="form form-control mb-3">
-          <input id="password" type="password" placeholder="Contraseña" class="form form-control mb-3">
-          <button class="btn btn-primary-full btn-fluid p-2">
+        <form #loginForm="ngForm" (ngSubmit)="loginRequest()">
+          <input
+            id="email"
+            name="email"
+            #email="ngModel"
+            [(ngModel)]="request.email"
+            type="email"
+            placeholder="Correo electrónico"
+            class="form form-control mb-3"
+            [class.is-invalid]="!email.valid && email.touched"
+            required
+          >
+          <span *ngIf="!email.valid && email.touched" class="invalid-feedback mb-3">Ingresa un correo electrónico válido</span>
+          <input
+            id="password"
+            name="password"
+            #password="ngModel"
+            [(ngModel)]="request.password"
+            type="password"
+            placeholder="Contraseña"
+            class="form form-control mb-3"
+            [class.is-invalid]="!password.valid && password.touched"
+            required
+          >
+          <span *ngIf="!password.valid && password.touched" class="invalid-feedback mb-3">Ingresa tu contraseña</span>
+          <button class="btn btn-primary-full btn-fluid p-2" [disabled]="!loginForm.valid">
             Iniciar sesión
           </button>
         </form>

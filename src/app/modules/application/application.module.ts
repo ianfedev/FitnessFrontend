@@ -9,6 +9,7 @@ import {ApplicationRouting} from './application.routing';
 import {ApplicationFooterComponent} from './components/footer/application-footer.component';
 import {ApplicationLoginComponent} from './components/login/application-login.component';
 import {ApplicationRegisterComponent} from './components/register/application-register.component';
+import {ApplicationLoginGuard} from './guards/application-login.guard';
 
 
 @NgModule({
@@ -22,6 +23,9 @@ import {ApplicationRegisterComponent} from './components/register/application-re
   exports: [
     ApplicationHeaderComponent,
     ApplicationFooterComponent
+  ],
+  providers: [
+    ApplicationLoginGuard
   ],
   imports: [
     CommonModule,

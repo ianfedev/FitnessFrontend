@@ -8,7 +8,7 @@
       </span>
       </button>
     </span>
-    <a href="#" class="header__logo">
+    <a routerLink="/" class="header__logo">
       <i class="fas fa-running"></i>
       FitnessApp
     </a>
@@ -22,25 +22,25 @@
     <li>Rutinas</li>
   </ul>
   <section *ngIf="!logged" class="header__login">
-    <a href="#" class="btn-primary">Inicia sesión</a>
-    <a href="#" class="btn btn-outline-info">Registrate</a>
+    <a routerLink="/login" class="btn-primary">Inicia sesión</a>
+    <a routerLink="/register" class="btn btn-outline-info">Registrate</a>
   </section>
-  <section class="header__profile">
+  <section *ngIf="logged" class="header__profile">
     <button type="button" class="btn" (click)="headerCollapsed = !headerCollapsed"
             [attr.aria-expanded]="!headerCollapsed" aria-controls="collapseHeader">
       <i class="fas fa-user header__profile-responsive-icon"></i>
-      <span>Juancho Ramirez <i class="fas fa-sort-down"></i></span>
+      <span>{{user.name.split(" ")[0].substring(0, 16)}} <i class="fas fa-sort-down"></i></span>
     </button>
     <div class="header__profile-dropdown" [ngbCollapse]="headerCollapsed">
       <div class="card">
-        <div class="card-body ">
+        <div class="card-body">
           <a class="dropdown-item btn btn-primary-full mb-1" href="#">
             <i class="fas fa-key"></i>
             Housekeeping
           </a>
-          <a class="dropdown-item" href="#">Mi Cuenta</a>
+          <a class="dropdown-item" routerLink="/user/account">Mi Cuenta</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Cerrar sesión</a>
+          <a class="dropdown-item cursor-pointer" (click)="logout()">Cerrar sesión</a>
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ import {AppRouting} from './app.routing';
 import {VideoModule} from './modules/video/video.module';
 import {UserModule} from './modules/user/user.module';
 import {AdminModule} from './modules/admin/admin.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {AdminModule} from './modules/admin/admin.module';
   imports: [
     BrowserModule,
     NgbModule,
+    HttpClientModule,
     SharedModule,
     ApplicationModule,
     VideoModule,

@@ -1,13 +1,46 @@
 <section>
   <p><ngb-progressbar type="info" [value]="0" width="100%">0%</ngb-progressbar></p>
-  <section class="login__basics">
+  <form #registerForm="ngForm" (ngSubmit)="registerRequest()" class="login__basics">
     <h2>Empecemos por lo básico</h2>
     <p>Cuéntanos más de tí. Nunca compartiremos esta información con nadie.</p>
-    <input id="name" type="text" placeholder="Ingresa tu nombre cmopleto" class="form form-control mb-3">
-    <input id="email" type="email" placeholder="Tu correo electrónico" class="form form-control mb-3">
-    <input id="password" type="password" placeholder="Ingresa una contraseña" class="form form-control mb-3">
-    <button class="btn btn-primary-full btn-fluid p-2">
+    <input
+      id="name"
+      name="name"
+      #name="ngModel"
+      [(ngModel)]="request.name"
+      type="text"
+      placeholder="Ingresa tu nombre cmopleto"
+      class="form form-control mb-3"
+      [class.is-invalid]="!name.valid && name.touched"
+      required
+    >
+    <span *ngIf="!name.valid && name.touched" class="invalid-feedback mb-3">Ingresa tu nombre</span>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      #email="ngModel"
+      [(ngModel)]="request.email"
+      placeholder="Tu correo electrónico"
+      class="form form-control mb-3"
+      [class.is-invalid]="!email.valid && email.touched"
+      required
+    >
+    <span *ngIf="!email.valid && email.touched" class="invalid-feedback mb-3">Ingresa un correo electrónico válido</span>
+    <input
+      id="password"
+      name="password"
+      type="password"
+      #password="ngModel"
+      [(ngModel)]="request.password"
+      placeholder="Ingresa una contraseña"
+      class="form form-control mb-3"
+      [class.is-invalid]="!password.valid && password.touched"
+      required
+    >
+    <span *ngIf="!password.valid && password.touched" class="invalid-feedback mb-3">Una contraseña</span>
+    <button class="btn btn-primary-full btn-fluid p-2" [disabled]="!registerForm.valid">
       ¡Registrarse!
     </button>
-  </section>
+  </form>
 </section>
