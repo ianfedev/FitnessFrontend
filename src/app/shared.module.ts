@@ -5,6 +5,8 @@ import {FormsModule} from '@angular/forms';
 import {ResponsiveMenuDirective} from './directives/responsive.menu.directive';
 import {UserService} from './services/user.service';
 import {GroupService} from './services/group.service';
+import {YoutubeService} from './services/youtube.service';
+import {CategoryService} from './services/category.service';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import {GroupService} from './services/group.service';
   ],
   providers: [
     UserService,
+    YoutubeService,
+    CategoryService,
     GroupService
   ],
   imports: [

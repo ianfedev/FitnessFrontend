@@ -1,16 +1,35 @@
 <div class="d-flex justify-content-center">
   <div class="container mb-3">
-    <h1 class="mb-3">Editar VIDEO</h1>
+    <h1 class="mb-3">{{title}}</h1>
     <form class="row">
       <div class="col-12 col-md-6">
-        <input id="video" type="text" placeholder="Link del video" class="form form-control mb-3">
+        <input
+          id="video"
+          name="video"
+          #video="ngModel"
+          [(ngModel)]="link"
+          type="text"
+          placeholder="Link del video"
+          class="form form-control mb-3"
+          (change)="videoChange($event)"
+        >
+        <input
+          id="typeahead-focus"
+          type="text"
+          class="form-control"
+          [(ngModel)]="videoModel.tag"
+          [ngbTypeahead]="badges"
+          #instance="ngbTypeahead"
+        />
       </div>
       <div class="col-12 col-md-6">
         <div class="d-flex justify-content-center">
           <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="assets/img/placeholder.jpg" alt="Video">
+            <img *ngIf="!youtubeVideo.snippet" class="card-img-top" src="assets/img/placeholder.jpg" alt="Video">
+            <img *ngIf="youtubeVideo.snippet" class="card-img-top" src="{{youtubeVideo.snippet.thumbnails.high.url}}" alt="Video">
             <div class="card-body">
-              <h2>Id del video</h2>
+              <h2 *ngIf="!youtubeVideo.snippet">Ingresa un video válido</h2>
+              <h2 *ngIf="youtubeVideo.snippet">{{youtubeVideo.snippet.title}}</h2>
             </div>
           </div>
         </div>

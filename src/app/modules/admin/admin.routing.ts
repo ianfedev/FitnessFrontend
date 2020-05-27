@@ -8,14 +8,22 @@ import {AdminCategoryEditComponent} from './components/category-edit/admin-categ
 import {AdminCategoryListComponent} from './components/category-list/admin-category-list.component';
 import {AdminVideoEditComponent} from './components/video-edit/admin-video-edit.component';
 import {AdminVideoListComponent} from './components/video-list/admin-video-list.component';
+import {AdminCategoryListGuard} from './guards/admin-category-list.guard';
+import {AdminCategoryEditGuard} from './guards/admin-category-edit.guard';
+import {AdminVideoEditGuard} from './guards/admin-video-edit.guard';
 
 
 const routes: Routes = [
   {path: 'group/edit', component: AdminGroupEditComponent},
   {path: 'user/edit', component: AdminUserEditComponent},
-  {path: 'category/edit', component: AdminCategoryEditComponent},
-  {path: 'video/edit', component: AdminVideoEditComponent},
-  {path: 'categories', component: AdminCategoryListComponent},
+  {path: 'video/edit', component: AdminVideoEditComponent,
+    canActivate: [AdminVideoEditGuard], resolve: {AdminVideoEditGuard}
+  },
+  {path: 'video/create', component: AdminVideoEditComponent},
+  {path: 'category/edit/:id', component: AdminCategoryEditComponent,
+    canActivate: [AdminCategoryEditGuard], resolve: {AdminCategoryEditGuard}},
+  {path: 'category/create', component: AdminCategoryEditComponent, canActivate: [AdminCategoryEditGuard]},
+  {path: 'categories', component: AdminCategoryListComponent, resolve: {AdminCategoryListGuard}},
   {path: 'videos',  component: AdminVideoListComponent},
   {path: 'groups', component: AdminGroupListComponent},
   {path: 'users', component: AdminUserListComponent}

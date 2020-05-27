@@ -1,13 +1,23 @@
 <div class="d-flex justify-content-center">
   <div class="container mb-3">
-    <h1 class="mb-3">Editar a CATEGORY</h1>
-    <form class="row">
+    <h1 class="mb-3">Editar a {{category.name}}</h1>
+    <form #category="ngForm" (ngSubmit)="alterRequest()">
       <div class="col-12 col-md-6">
-        <input id="email" type="email" placeholder="Correo electrónico" class="form form-control mb-3">
+        <input
+          id="name"
+          name="name"
+          #name="ngModel"
+          [(ngModel)]="category.name"
+          type="text"
+          placeholder="Nombre"
+          class="form form-control mb-3"
+          [class.is-invalid]="!name.valid && name.touched"
+          required
+        >
       </div>
       <div class="col-12 col-md-6">
         <section class="text-right">
-          <button class="btn btn-primary-full">Actualizar</button>
+          <button class="btn btn-primary-full" [disabled]="category.valid">Actualizar</button>
         </section>
       </div>
     </form>

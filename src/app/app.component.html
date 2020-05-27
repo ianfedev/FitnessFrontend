@@ -1,4 +1,4 @@
 <app-header [hidden]="!branding"></app-header>
-<app-admin-navigation [hidden]="true"></app-admin-navigation>
+<app-admin-navigation [hidden]="!admin"></app-admin-navigation>
 <router-outlet></router-outlet>
 <app-footer [hidden]="!branding"></app-footer>
