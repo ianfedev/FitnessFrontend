@@ -14,22 +14,23 @@
           (change)="videoChange($event)"
         >
         <input
-          id="typeahead-focus"
+          id="tag"
+          name="tag"
+          #tag="ngModel"
           type="text"
           class="form-control"
           [(ngModel)]="videoModel.tag"
           [ngbTypeahead]="badges"
-          #instance="ngbTypeahead"
         />
       </div>
       <div class="col-12 col-md-6">
         <div class="d-flex justify-content-center">
           <div class="card" style="width: 18rem;">
-            <img *ngIf="!youtubeVideo.snippet" class="card-img-top" src="assets/img/placeholder.jpg" alt="Video">
-            <img *ngIf="youtubeVideo.snippet" class="card-img-top" src="{{youtubeVideo.snippet.thumbnails.high.url}}" alt="Video">
+            <img *ngIf="youtubeVideo === null" class="card-img-top" src="assets/img/placeholder.jpg" alt="Video">
+            <img *ngIf="youtubeVideo !== null && youtubeVideo.snippet" class="card-img-top" src="{{youtubeVideo.snippet.thumbnails.high.url}}" alt="Video">
             <div class="card-body">
-              <h2 *ngIf="!youtubeVideo.snippet">Ingresa un video válido</h2>
-              <h2 *ngIf="youtubeVideo.snippet">{{youtubeVideo.snippet.title}}</h2>
+              <h2 *ngIf="youtubeVideo === null">Ingresa un video válido</h2>
+              <h2 *ngIf="youtubeVideo !== null && youtubeVideo.snippet">{{youtubeVideo.snippet.title}}</h2>
             </div>
           </div>
         </div>

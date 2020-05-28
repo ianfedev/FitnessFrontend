@@ -7,7 +7,7 @@ import {ICategory} from '../../../models/ICategory';
 import {CategoryService} from '../../../services/category.service';
 
 @Injectable()
-export class AdminVideoEditGuard implements CanActivate, Resolve<ICategory> {
+export class AdminVideoEditGuard implements CanActivate, Resolve<ICategory[]> {
 
   constructor(
     private groupService: GroupService,
@@ -18,8 +18,10 @@ export class AdminVideoEditGuard implements CanActivate, Resolve<ICategory> {
     return this.groupService.permissions().pipe(map(permission => permission.admin));
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ICategory> {
-    return this.categoryService.get(route.params.id).pipe(map(categories => categories));
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ICategory[]> {
+    return this.categoryService.list().pipe(map(categories => {
+      return categories;
+    }));
   }
 
 }

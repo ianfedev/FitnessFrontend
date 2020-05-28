@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {IYouTubeVideo} from '../../../../models/youtube/IYouTubeVideo';
 import {YoutubeService} from '../../../../services/youtube.service';
 import {IVideo} from '../../../../models/IVideo';
-import {ICategory} from '../../../../models/ICategory';
 
 @Component({
   selector: 'app-admin-video-edit',
@@ -24,7 +23,7 @@ export class AdminVideoEditComponent implements OnInit {
   ) {
     this.title = 'Crear video';
     this.videoModel = {} as IVideo;
-    this.youtubeVideo = {} as IYouTubeVideo;
+    this.youtubeVideo = null;
     this.badges = [];
     this.link = '';
     this.create = this.routeSnapshot.snapshot.url[1].path === 'create';
@@ -33,13 +32,9 @@ export class AdminVideoEditComponent implements OnInit {
   ngOnInit(): void {
     this.routeSnapshot.data.subscribe(
       data => {
-        console.log(data);
-        data.AdminVideoEditGuard.map(badge => {
-          this.badges.push(badge.name);
-        });
+        this.badges = data.AdminVideoEditGuard.map(badge => badge.name);
       }
     );
-    console.log(this.badges);
   }
 
   videoChange(event): void {

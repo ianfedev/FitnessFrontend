@@ -19,7 +19,9 @@ const routes: Routes = [
   {path: 'video/edit', component: AdminVideoEditComponent,
     canActivate: [AdminVideoEditGuard], resolve: {AdminVideoEditGuard}
   },
-  {path: 'video/create', component: AdminVideoEditComponent},
+  {path: 'video/create', component: AdminVideoEditComponent,
+    canActivate: [AdminVideoEditGuard], resolve: {AdminVideoEditGuard}
+  },
   {path: 'category/edit/:id', component: AdminCategoryEditComponent,
     canActivate: [AdminCategoryEditGuard], resolve: {AdminCategoryEditGuard}},
   {path: 'category/create', component: AdminCategoryEditComponent, canActivate: [AdminCategoryEditGuard]},
