@@ -7,19 +7,24 @@ import {UserService} from './services/user.service';
 import {GroupService} from './services/group.service';
 import {YoutubeService} from './services/youtube.service';
 import {CategoryService} from './services/category.service';
+import {VideoService} from './services/video.service';
+import {SafePipe} from './pipes/safe.pipe';
 
 
 @NgModule({
   declarations: [
-    ResponsiveMenuDirective
+    ResponsiveMenuDirective,
+    SafePipe
   ],
   exports: [
-    ResponsiveMenuDirective
+    ResponsiveMenuDirective,
+    SafePipe
   ],
   providers: [
     UserService,
     YoutubeService,
     CategoryService,
+    VideoService,
     GroupService
   ],
   imports: [

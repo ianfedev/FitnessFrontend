@@ -9,26 +9,10 @@
       <div class="row">
         <section class="col-12 col-md-4">
           <ul class="list-unstyled">
-            <li><strong>Órden de carga</strong></li>
-            <li><a href="#">Ayer</a></li>
-            <li><a href="#">Hace 1 semana</a></li>
-            <li><a href="#">Hace 1 mes</a></li>
-          </ul>
-        </section>
-        <section class="col-12 col-md-4">
-          <ul class="list-unstyled">
             <li><strong>Categoría</strong></li>
-            <li><a href="#">Yoga</a></li>
-            <li><a href="#">Fitness</a></li>
-            <li><a href="#">Fatness</a></li>
-          </ul>
-        </section>
-        <section class="col-12 col-md-4">
-          <ul class="list-unstyled">
-            <li><strong>Categoría</strong></li>
-            <li><a href="#">Yoga</a></li>
-            <li><a href="#">Fitness</a></li>
-            <li><a href="#">Fatness</a></li>
+            <li><a class="cursor-pointer" (click)="filter({})">Yoga</a></li>
+            <li><a class="cursor-pointer" (click)="filter({})">Fitness</a></li>
+            <li><a class="cursor-pointer" (click)="filter({})">Fatness</a></li>
           </ul>
         </section>
       </div>
@@ -36,27 +20,21 @@
   </div>
 </section>
 <ul class="video-search list-unstyled">
-  <li class="video-search__item">
+  <li *ngFor="let video of videos" class="video-search__item">
     <div class="row">
       <div class="col-12 col-md-4 d-flex justify-content-center mb-3 mb-md-0">
-        <img src="assets/img/placeholder.jpg" alt="Image">
+        <img src="{{video.youtube.snippet.thumbnails.medium.url}}" alt="{{video.youtube.snippet.title}}">
       </div>
       <div class="col-12 col-md-8">
         <div class="row h-100 text-center text-md-left">
           <div class="col-12 col-md-8">
-            <h3 class="video-search__title">Video Title</h3>
+            <h3 class="video-search__title">{{video.youtube.snippet.title}}</h3>
             <ul class="video-search__tags">
               <li>
-                <a href="#">
-                  <span class="badge badge-pill badge-primary">Primary</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="badge badge-pill badge-primary">Primary</span>
-                </a>
+                <span class="badge badge-pill badge-primary">{{video.video.tag.name}}</span>
               </li>
             </ul>
+            <!--
             <section class="video-search__rating">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -64,9 +42,10 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </section>
+            -->
           </div>
           <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-            <a href="#" class="btn btn-primary-full mt-2 mt-md-0">Ver video</a>
+            <a routerLink="{{'/video/play/' + video.video.id}}" class="btn btn-primary-full mt-2 mt-md-0">Ver video</a>
           </div>
         </div>
       </div>

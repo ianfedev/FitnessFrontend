@@ -10,6 +10,7 @@ import {ApplicationFooterComponent} from './components/footer/application-footer
 import {ApplicationLoginComponent} from './components/login/application-login.component';
 import {ApplicationRegisterComponent} from './components/register/application-register.component';
 import {ApplicationLoginGuard} from './guards/application-login.guard';
+import {ApplicationHomeGuard} from './guards/application-home.guard';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {ApplicationLoginGuard} from './guards/application-login.guard';
     ApplicationFooterComponent
   ],
   providers: [
-    ApplicationLoginGuard
+    ApplicationLoginGuard,
+    ApplicationHomeGuard
   ],
   imports: [
     CommonModule,

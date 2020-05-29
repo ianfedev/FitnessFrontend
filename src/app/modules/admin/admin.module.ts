@@ -19,6 +19,7 @@ import {AdminUserListGuard} from './guards/admin-user-list.guard';
 import {AdminUserEditGuard} from './guards/admin-user-edit.guard';
 import {AdminGroupListGuard} from './guards/admin-group-list.guard';
 import {AdminGroupEditGuard} from './guards/admin-group-edit.guard';
+import {AdminVideoListGuard} from './guards/admin-video-list.guard';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {AdminGroupEditGuard} from './guards/admin-group-edit.guard';
     AdminCategoryListGuard,
     AdminCategoryEditGuard,
     AdminVideoEditGuard,
+    AdminVideoListGuard,
     AdminUserListGuard,
     AdminUserEditGuard,
     AdminGroupListGuard,

@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {UserService} from './user.service';
-import {IVideo} from '../models/IVideo';
+import {IVideo, IVideoCreation} from '../models/IVideo';
 
 @Injectable()
 export class VideoService {
@@ -12,7 +12,7 @@ export class VideoService {
     private userService: UserService
   ) {}
 
-  public create(body: IVideo): Observable<IVideo> {
+  public create(body: IVideoCreation): Observable<IVideo> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
     return this.http.post('http://www.mocky.io/v2/5ed093d63500008d00ff9d05', body, {headers}) as Observable<IVideo>;
   }
@@ -27,7 +27,7 @@ export class VideoService {
     return this.http.get('http://www.mocky.io/v2/5ed093d63500008d00ff9d05', {headers}) as Observable<IVideo>;
   }
 
-  public update(id: string, body: IVideo): Observable<IVideo> {
+  public update(body: IVideoCreation): Observable<IVideo> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
     return this.http.put('http://www.mocky.io/v2/5ed093d63500008d00ff9d05', body, {headers}) as Observable<IVideo>;
   }

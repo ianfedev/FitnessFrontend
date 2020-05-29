@@ -7,6 +7,8 @@ import {VideoRouting} from './video.routing';
 import {VideoSearchComponent} from './components/search/video-search.component';
 import {VideoPlayComponent} from './components/play/video-play.component';
 import {VideoExploreComponent} from './components/explore/video-explore.component';
+import {VideoSearchGuard} from './guards/video-search.guard';
+import {VideoPlayGuard} from './guards/video-play.guard';
 
 
 @NgModule({
@@ -23,6 +25,10 @@ import {VideoExploreComponent} from './components/explore/video-explore.componen
     NgbModule,
     FormsModule,
     SharedModule
+  ],
+  providers: [
+    VideoSearchGuard,
+    VideoPlayGuard
   ]
 })
 export class VideoModule { }

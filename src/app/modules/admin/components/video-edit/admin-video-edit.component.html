@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
   <div class="container mb-3">
     <h1 class="mb-3">{{title}}</h1>
-    <form class="row">
+    <form #form="ngForm" (ngSubmit)="alterRequest()" class="row">
       <div class="col-12 col-md-6">
         <input
           id="video"
@@ -18,12 +18,12 @@
           id="tag"
           name="tag"
           #tag="ngModel"
-          [(ngModel)]="request.id"
+          [(ngModel)]="request.tag"
           class="form-control form-control-lg"
           [class.is-invalid]="tag.touched && !tag.valid"
           required
         >
-          <option *ngFor="let badge of badges" [value]="badge.id">{{badge.name}}</option>
+          <option *ngFor="let badge of baseVideo.categories" [value]="badge.id">{{badge.name}}</option>
         </select>
       </div>
       <div class="col-12 col-md-6">

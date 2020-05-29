@@ -5,34 +5,28 @@
   <div class="container">
     <section class="row">
       <section class="col-12 col-lg-6 text-center text-lg-left">
-        <h1>Video player</h1>
+        <h1>{{video.youtube.snippet.title}}</h1>
         <ul class="video-search__tags">
           <li>
-            <a href="#">
-              <span class="badge badge-pill badge-primary">Primary</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="badge badge-pill badge-primary">Primary</span>
-            </a>
+            <span class="badge badge-pill badge-primary">{{video.video.tag.name}}</span>
           </li>
         </ul>
       </section>
       <section class="col-12 col-lg-6 d-flex video__description">
-        <img src="assets/img/placeholder.jpg" alt="Channel" class="video__channel-image">
+        <!--<img src="assets/img/placeholder.jpg" alt="Channel" class="video__channel-image">-->
         <section>
-          <h5>Name of channer</h5>
-          <span class="video__channel-uploaded">Uploaded 27/27/27</span>
+          <h5>{{video.youtube.snippet.channelTitle}}</h5>
+          <span class="video__channel-uploaded">Publicado el {{video.youtube.snippet.publishedAt}}</span>
         </section>
       </section>
     </section>
     <div class="row">
       <section class="col-12 col-lg-6">
         <p class="video__description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at aut distinctio dolorum et facilis harum illo ipsum itaque laboriosam magni maxime, molestiae possimus, repellendus similique tenetur, vel! Eius, eos.
+          {{video.youtube.snippet.description}}
         </p>
       </section>
+      <!--
       <section class="col-12 col-lg-6">
         <ul class="ratings">
           <li>
@@ -60,6 +54,7 @@
           </section>
         </section>
       </section>
+      -->
     </div>
   </div>
 </section>

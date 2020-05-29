@@ -11,7 +11,7 @@ export class YoutubeService {
   ) {}
 
   public get(id: string): Observable<IYouTubeResponse> {
-    return this.http.get('https://www.googleapis.com/youtube/v3/videos?part=id%2C+snippet&id=' + id + '&key=AIzaSyBxdiHBmpnmoLIKVJtvtiLry59HU-5nUDk') as Observable<IYouTubeResponse>;
+    return this.http.get('https://www.googleapis.com/youtube/v3/videos?part=id%2C+snippet&id=' + id + '&key=AIzaSyBArNCh80DsQVFmoorrsIYLMfwSVnbwKe8') as Observable<IYouTubeResponse>;
   }
 
 }

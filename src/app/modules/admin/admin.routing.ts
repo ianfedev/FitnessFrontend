@@ -15,6 +15,7 @@ import {AdminUserListGuard} from './guards/admin-user-list.guard';
 import {AdminUserEditGuard} from './guards/admin-user-edit.guard';
 import {AdminGroupListGuard} from './guards/admin-group-list.guard';
 import {AdminGroupEditGuard} from './guards/admin-group-edit.guard';
+import {AdminVideoListGuard} from './guards/admin-video-list.guard';
 
 
 const routes: Routes = [
@@ -27,7 +28,7 @@ const routes: Routes = [
   {path: 'user/edit/:id', component: AdminUserEditComponent,
     canActivate: [AdminUserEditGuard], resolve: {AdminUserEditGuard}
   },
-  {path: 'video/edit', component: AdminVideoEditComponent,
+  {path: 'video/edit/:id', component: AdminVideoEditComponent,
     canActivate: [AdminVideoEditGuard], resolve: {AdminVideoEditGuard}
   },
   {path: 'video/create', component: AdminVideoEditComponent,
@@ -37,7 +38,7 @@ const routes: Routes = [
     canActivate: [AdminCategoryEditGuard], resolve: {AdminCategoryEditGuard}},
   {path: 'category/create', component: AdminCategoryEditComponent, canActivate: [AdminCategoryEditGuard]},
   {path: 'categories', component: AdminCategoryListComponent, resolve: {AdminCategoryListGuard}},
-  {path: 'videos',  component: AdminVideoListComponent},
+  {path: 'videos',  component: AdminVideoListComponent, canActivate: [AdminVideoListGuard], resolve: {AdminVideoListGuard}},
   {path: 'groups', component: AdminGroupListComponent,
     canActivate: [AdminGroupListGuard], resolve: {AdminGroupListGuard}
   },

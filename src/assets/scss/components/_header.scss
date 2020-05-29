@@ -137,6 +137,16 @@ header {
         padding: 0;
       }
 
+      & a {
+        color: #212529;
+        transition: all .3s;
+
+        &:hover {
+          color: $color-tertiary;
+          text-decoration: none;
+        }
+      }
+
       &:not(:last-of-type) {
         border-bottom: 1px solid lightgray;
 

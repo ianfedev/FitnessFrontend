@@ -18,8 +18,7 @@
     <button><i class="fas fa-search"></i></button>
   </section>
   <ul class="header__navigation">
-    <li>Recomendados</li>
-    <li>Rutinas</li>
+    <li><a routerLink="/video/explore">Explorar videos</a></li>
   </ul>
   <section *ngIf="!logged" class="header__login">
     <a routerLink="/login" class="btn-primary">Inicia sesión</a>

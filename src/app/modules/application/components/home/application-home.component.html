@@ -26,17 +26,8 @@
           <a ngbNavLink>Gym</a>
           <ng-template ngbNavContent>
             <section class="row">
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div *ngFor="let video of videos.first; let i = index" class="col-6 home__recents-thumb">
+                <iframe *ngIf="i !== 0" [src]="'https://www.youtube.com/embed/' + video.video.id | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </section>
           </ng-template>
@@ -45,17 +36,8 @@
           <a ngbNavLink>Yoga</a>
           <ng-template ngbNavContent>
             <section class="row">
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div *ngFor="let video of videos.first; let i = index" class="col-6 home__recents-thumb">
+                <iframe [src]="'https://www.youtube.com/embed/' + video.video.id | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </section>
           </ng-template>
@@ -64,17 +46,8 @@
           <a ngbNavLink>Deportes</a>
           <ng-template ngbNavContent>
             <section class="row">
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <div class="col-6 home__recents-thumb">
-                <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div *ngFor="let video of videos.first; let i = index" class="col-6 home__recents-thumb">
+                <iframe [src]="'https://www.youtube.com/embed/' + video.video.id | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </section>
           </ng-template>
@@ -85,7 +58,7 @@
   <div class="row">
     <div class="col-12 col-md-6 d-flex align-items-center">
       <div class="home__recents-video d-none d-md-block">
-        <iframe src="https://www.youtube.com/embed/2Od7QCsyqkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe [src]="'https://www.youtube.com/embed/' + videos.first[0].video.id | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
     <div class="col-12 col-md-6">
