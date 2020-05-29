@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {IVideoHome} from '../../../../models/IVideo';
-import {ApplicationHomeGuard} from '../../guards/application-home.guard';
 
 @Component({
   selector: 'app-home',

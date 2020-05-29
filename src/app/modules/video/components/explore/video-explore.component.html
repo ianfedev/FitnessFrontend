@@ -1,42 +1,54 @@
 <div class="container mt-4 mb-4">
   <div class="row mb-5">
     <div class="col-12 col-md-6">
-      <section class="explore explore--fitness">
-        <h2>Fitness</h2>
-        <img src="assets/img/explore/fitness.jpg"  alt="">
-      </section>
+      <a routerLink="/video/search" [queryParams]="{category: 123}">
+        <section class="explore explore--fitness">
+          <h2>Fitness</h2>
+          <img src="assets/img/explore/fitness.jpg"  alt="">
+        </section>
+      </a>
     </div>
     <div class="col-12 col-md-6 ">
-      <section class="explore explore--yoga">
-        <h2>Yoga</h2>
-        <img src="assets/img/explore/yoga.jpg" alt="">
-      </section>
+      <a routerLink="/video/search" [queryParams]="{category: 123}">
+        <section  class="explore explore--yoga">
+          <h2>Yoga</h2>
+          <img src="assets/img/explore/yoga.jpg" alt="">
+        </section>
+      </a>
     </div>
   </div>
   <div class="row d-flex justify-content-center">
     <div class="col-12 col-md-6 col-lg-3">
-      <section class="explore explore--cardio">
-        <h2>Cardio</h2>
-        <img src="assets/img/explore/cardio.jpg" alt="">
-      </section>
+      <a routerLink="/video/search" [queryParams]="{category: 123}">
+        <section class="explore explore--cardio">
+          <h2>Cardio</h2>
+          <img src="assets/img/explore/cardio.jpg" alt="">
+        </section>
+      </a>
     </div>
     <div class="col-12 col-md-6 col-lg-3">
-      <section class="explore explore--meditation">
-        <h2>Meditación</h2>
-        <img src="assets/img/explore/meditation.jpg" alt="">
-      </section>
+      <a routerLink="/video/search" [queryParams]="{category: 123}">
+        <section class="explore explore--meditation">
+          <h2>Meditación</h2>
+          <img src="assets/img/explore/meditation.jpg" alt="">
+        </section>
+      </a>
     </div>
     <div class="col-12 col-md-6 col-lg-3">
-      <section class="explore explore--biceps">
-        <h2>Biceps</h2>
-        <img src="assets/img/explore/biceps.jpg" alt="">
-      </section>
+      <a href="#">
+        <section routerLink="/video/search" [queryParams]="{category: 123}" class="explore explore--biceps">
+          <h2>Biceps</h2>
+          <img src="assets/img/explore/biceps.jpg" alt="">
+        </section>
+      </a>
     </div>
     <div class="col-12 col-md-6 col-lg-3">
-      <section class="explore explore--triceps">
-        <h2>Triceps</h2>
-        <img src="assets/img/explore/triceps.jpg" alt="">
-      </section>
+      <a routerLink="/video/search" [queryParams]="{category: 123}" class="cursor-pointer">
+        <section  class="explore explore--triceps">
+          <h2>Triceps</h2>
+          <img src="assets/img/explore/triceps.jpg" alt="">
+        </section>
+      </a>
     </div>
   </div>
 </div>

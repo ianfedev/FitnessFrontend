@@ -12,8 +12,7 @@ export class VideoSearchComponent implements OnInit{
   public videos: IVideoPair[];
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute
   ) {
     this.collapsed = true;
   }
@@ -24,7 +23,4 @@ export class VideoSearchComponent implements OnInit{
     });
   }
 
-  filter(params): void {
-    this.router.navigate(['/video/search'], {queryParams: params});
-  }
 }

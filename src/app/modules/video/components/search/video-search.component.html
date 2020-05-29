@@ -10,9 +10,9 @@
         <section class="col-12 col-md-4">
           <ul class="list-unstyled">
             <li><strong>Categoría</strong></li>
-            <li><a class="cursor-pointer" (click)="filter({})">Yoga</a></li>
-            <li><a class="cursor-pointer" (click)="filter({})">Fitness</a></li>
-            <li><a class="cursor-pointer" (click)="filter({})">Fatness</a></li>
+            <li><a class="cursor-pointer" routerLink="/video/search" [queryParams]="{category: 123}">Yoga</a></li>
+            <li><a class="cursor-pointer" routerLink="/video/search" [queryParams]="{category: 123}">Fitness</a></li>
+            <li><a class="cursor-pointer" routerLink="/video/search" [queryParams]="{category: 123}">Fatness</a></li>
           </ul>
         </section>
       </div>
