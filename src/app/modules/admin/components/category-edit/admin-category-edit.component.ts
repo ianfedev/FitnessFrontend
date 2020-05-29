@@ -10,13 +10,15 @@ import {CategoryService} from '../../../../services/category.service';
 export class AdminCategoryEditComponent implements OnInit {
 
   public category: ICategory;
+  public title: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private categoryService: CategoryService,
     private router: Router
   ) {
-    this.category = {name: ''} as ICategory;
+    this.title = 'Crear categoría';
+    this.category = {id: 0, name: ''};
   }
 
   ngOnInit(): void {
@@ -24,6 +26,7 @@ export class AdminCategoryEditComponent implements OnInit {
       this.activatedRoute.data.subscribe(data => {
         this.category = data.AdminCategoryEditGuard;
       });
+      this.title = 'Editar categoría ' + this.category.name;
     }
   }
 

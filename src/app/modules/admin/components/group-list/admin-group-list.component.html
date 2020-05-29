@@ -1,5 +1,5 @@
 <div class="text-right admin-table mb-2">
-  <a href="#" class="btn btn-info mr-1">
+  <a routerLink="/admin/group/create" class="btn btn-info mr-1">
     <i class="fas fa-edit"></i>
     <span class="admin-table__tag"> Crear</span>
   </a>
@@ -14,15 +14,15 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th width="10%" scope="row">1</th>
-      <td width="60%">Administrador</td>
+    <tr *ngFor="let group of groups">
+      <th width="10%" scope="row">{{group.id}}</th>
+      <td width="60%">{{group.name}}</td>
       <td width="30%">
-        <a href="#" class="btn btn-info mr-1" >
+        <a routerLink="{{'/admin/group/edit/' + group.id}}" class="btn btn-info mr-1" >
           <i class="fas fa-edit"></i>
           <span class="admin-table__tag"> Editar</span>
         </a>
-        <a href="#" class="btn btn-danger" >
+        <a (click)="deleteGroup(group.id + '')" class="btn btn-danger" >
           <i class="fas fa-trash-alt"></i>
           <span class="admin-table__tag"> Eliminar</span>
         </a>

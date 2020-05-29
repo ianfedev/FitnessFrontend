@@ -15,6 +15,10 @@ import {FormsModule} from '@angular/forms';
 import {AdminCategoryListGuard} from './guards/admin-category-list.guard';
 import {AdminCategoryEditGuard} from './guards/admin-category-edit.guard';
 import {AdminVideoEditGuard} from './guards/admin-video-edit.guard';
+import {AdminUserListGuard} from './guards/admin-user-list.guard';
+import {AdminUserEditGuard} from './guards/admin-user-edit.guard';
+import {AdminGroupListGuard} from './guards/admin-group-list.guard';
+import {AdminGroupEditGuard} from './guards/admin-group-edit.guard';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import {AdminVideoEditGuard} from './guards/admin-video-edit.guard';
   providers: [
     AdminCategoryListGuard,
     AdminCategoryEditGuard,
-    AdminVideoEditGuard
+    AdminVideoEditGuard,
+    AdminUserListGuard,
+    AdminUserEditGuard,
+    AdminGroupListGuard,
+    AdminGroupEditGuard
   ],
     imports: [
         CommonModule,

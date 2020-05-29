@@ -11,17 +11,20 @@
           type="text"
           placeholder="Link del video"
           class="form form-control mb-3"
+          [class.is-invalid]="video.touched && !video.valid"
           (change)="videoChange($event)"
         >
-        <input
+        <select
           id="tag"
           name="tag"
           #tag="ngModel"
-          type="text"
-          class="form-control"
-          [(ngModel)]="videoModel.tag"
-          [ngbTypeahead]="badges"
-        />
+          [(ngModel)]="request.id"
+          class="form-control form-control-lg"
+          [class.is-invalid]="tag.touched && !tag.valid"
+          required
+        >
+          <option *ngFor="let badge of badges" [value]="badge.id">{{badge.name}}</option>
+        </select>
       </div>
       <div class="col-12 col-md-6">
         <div class="d-flex justify-content-center">

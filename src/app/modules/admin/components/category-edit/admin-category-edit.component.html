@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
   <div class="container mb-3">
-    <h1 class="mb-3">Editar a {{category.name}}</h1>
-    <form #category="ngForm" (ngSubmit)="alterRequest()">
+    <h1 class="mb-3">{{title}}</h1>
+    <form #categoryForm="ngForm" (ngSubmit)="alterRequest()">
       <div class="col-12 col-md-6">
         <input
           id="name"
@@ -17,7 +17,7 @@
       </div>
       <div class="col-12 col-md-6">
         <section class="text-right">
-          <button class="btn btn-primary-full" [disabled]="category.valid">Actualizar</button>
+          <button class="btn btn-primary-full" [disabled]="categoryForm.valid">Actualizar</button>
         </section>
       </div>
     </form>
