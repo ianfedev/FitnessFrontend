@@ -31,7 +31,7 @@ export class AdminGroupEditComponent implements OnInit {
   }
 
   public alterRequest(): void {
-    this.groupService.update(this.group.id + '', this.group).subscribe(
+    this.groupService.update(this.group).subscribe(
       groups => {
         this.router.navigate(['/admin/groups']);
       },

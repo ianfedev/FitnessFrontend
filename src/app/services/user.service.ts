@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {ILoginTokenization, ILoginRequest, IUser} from '../models/IUser';
 import {Observable} from 'rxjs';
+import {GLOBAL} from './global';
 
 @Injectable()
 export class UserService {
@@ -12,23 +13,23 @@ export class UserService {
 
   public register(register: ILoginRequest): Observable<ILoginTokenization> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post('http://www.mocky.io/v2/5ec883752f00004c00db700a', register, {headers}) as Observable<ILoginTokenization>;
+    return this.http.post(GLOBAL.url + 'user/create/', register, {headers}) as Observable<ILoginTokenization>;
   }
 
   public login(login: ILoginRequest): Observable<ILoginTokenization> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post('http://www.mocky.io/v2/5ec883752f00004c00db700a', login, {headers}) as Observable<ILoginTokenization>;
+    return this.http.post(GLOBAL.url + 'user/obtain_token/', login, {headers}) as Observable<ILoginTokenization>;
   }
 
   public get(id?: string): Observable<IUser> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken());
-    if (id) { return this.http.post('http://www.mocky.io/v2/5ec897702f00004c00db7057', {headers}) as Observable<IUser>; }
-    return this.http.get('http://www.mocky.io/v2/5ec897702f00004c00db7057', {headers}) as Observable<IUser>;
+    if (id) { return this.http.post(GLOBAL.url + 'get/' + id, {headers}) as Observable<IUser>; }
+    return this.http.get(GLOBAL.url + 'user/get/', {headers}) as Observable<IUser>;
   }
 
-  public update(id: string, user: IUser): Observable<IUser> {
+  public update(user: IUser): Observable<IUser> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken());
-    return this.http.post('http://www.mocky.io/v2/5ec897702f00004c00db7057', {headers}) as Observable<IUser>;
+    return this.http.post(GLOBAL.url + 'user/update/', user, {headers}) as Observable<IUser>;
   }
 
   public list(page?: string): Observable<IUser[]> {

@@ -5,6 +5,7 @@ import {IPermissions} from '../models/IPermissions';
 import {UserService} from './user.service';
 import {ICategory} from '../models/ICategory';
 import {IGroup} from '../models/IGroup';
+import {GLOBAL} from './global';
 
 @Injectable()
 export class GroupService {
@@ -21,27 +22,27 @@ export class GroupService {
 
   public create(body: ICategory): Observable<IGroup> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.post('http://www.mocky.io/v2/5ed00bb83200004d5ae3d873', body, {headers}) as Observable<IGroup>;
+    return this.http.post(GLOBAL.url + 'groups/create/', body, {headers}) as Observable<IGroup>;
   }
 
   public list(): Observable<IGroup[]> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.get('http://www.mocky.io/v2/5ed00c773200009dc1e3d87c', {headers}) as Observable<IGroup[]>;
+    return this.http.get(GLOBAL.url + 'groups/list/', {headers}) as Observable<IGroup[]>;
   }
 
   public get(id: string): Observable<IGroup> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.get('http://www.mocky.io/v2/5ed00bb83200004d5ae3d873', {headers}) as Observable<IGroup>;
+    return this.http.get(GLOBAL.url + 'groups/get/' + id + '/', {headers}) as Observable<IGroup>;
   }
 
-  public update(id: string, body: IGroup): Observable<IGroup> {
+  public update(body: IGroup): Observable<IGroup> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.put('http://www.mocky.io/v2/5ed00bb83200004d5ae3d873', body, {headers}) as Observable<IGroup>;
+    return this.http.put(GLOBAL.url + 'groups/update/' + body.id + '/', body, {headers}) as Observable<IGroup>;
   }
 
   public delete(id: string): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.delete('http://www.mocky.io/v2/5ed00bb83200004d5ae3d873', {headers});
+    return this.http.delete(GLOBAL.url + 'groups/delete/' + id + '/', {headers});
   }
 
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ICategory} from '../../../../models/ICategory';
+import {CategoryService} from '../../../../services/category.service';
 
 @Component({
   selector: 'app-admin-category-list',
@@ -11,7 +12,9 @@ export class AdminCategoryListComponent implements OnInit {
   public categories: ICategory[];
 
   constructor(
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private categoryService: CategoryService
   ) {
   }
 
@@ -19,6 +22,18 @@ export class AdminCategoryListComponent implements OnInit {
     this.activatedRoute.data.subscribe(
       data => {
         this.categories = data.AdminCategoryListGuard;
+      }
+    );
+  }
+
+  deleteCategory(id: string): void {
+    this.categoryService.delete(id).subscribe(
+      category => {
+        this.router.navigate(['/admin/categories']);
+      },
+
+      error => {
+        console.log(error);
       }
     );
   }

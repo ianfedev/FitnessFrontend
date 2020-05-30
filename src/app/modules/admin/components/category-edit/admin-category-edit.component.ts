@@ -31,7 +31,7 @@ export class AdminCategoryEditComponent implements OnInit {
   }
 
   public alterRequest(): void {
-    this.categoryService.update(this.category.id + '', this.category).subscribe(
+    this.categoryService.update(this.category).subscribe(
       category => {
         this.router.navigate(['/admin/categories']);
       },

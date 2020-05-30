@@ -28,7 +28,7 @@ export class AdminUserEditComponent implements OnInit {
   }
 
   updateUser(): void {
-    this.userService.update(this.user.id + '', this.user).subscribe(
+    this.userService.update(this.user).subscribe(
       user => {
         this.router.navigate(['/admin/users']);
       },
