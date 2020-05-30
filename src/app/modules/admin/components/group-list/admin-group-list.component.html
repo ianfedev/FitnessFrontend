@@ -28,6 +28,11 @@
         </a>
       </td>
     </tr>
+    <tr *ngIf="groups.length < 1">
+      <td>
+        No hay videos grupos aún.
+      </td>
+    </tr>
     </tbody>
   </table>
 </div>

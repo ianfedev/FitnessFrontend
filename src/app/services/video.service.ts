@@ -15,27 +15,27 @@ export class VideoService {
 
   public create(body: IVideoCreation): Observable<IVideo> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.post(GLOBAL.url + 'videos/create/', body, {headers}) as Observable<IVideo>;
+    return this.http.post(GLOBAL.url + 'api/videos/create/', body, {headers}) as Observable<IVideo>;
   }
 
   public list(query?: any): Observable<IVideo[]> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.get(GLOBAL.url + 'videos/list/', {headers}) as Observable<IVideo[]>;
+    return this.http.get(GLOBAL.url + 'api/videos/list/', {headers}) as Observable<IVideo[]>;
   }
 
   public get(id: string): Observable<IVideo> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.get(GLOBAL.url + 'videos/get/' + id + '/', {headers}) as Observable<IVideo>;
+    return this.http.get(GLOBAL.url + 'api/videos/get/' + id + '/', {headers}) as Observable<IVideo>;
   }
 
   public update(body: IVideoCreation): Observable<IVideo> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.put(GLOBAL.url + 'videos/update/' + body.id + '/', body, {headers}) as Observable<IVideo>;
+    return this.http.put(GLOBAL.url + 'api/videos/update/' + body.id + '/', body, {headers}) as Observable<IVideo>;
   }
 
   public delete(id: string): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.delete(GLOBAL.url + 'videos/delete/' + id + '/', {headers});
+    return this.http.delete(GLOBAL.url + 'api/videos/delete/' + id + '/', {headers});
   }
 
 }

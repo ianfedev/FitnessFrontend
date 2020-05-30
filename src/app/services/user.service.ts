@@ -13,23 +13,23 @@ export class UserService {
 
   public register(register: ILoginRequest): Observable<ILoginTokenization> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(GLOBAL.url + 'user/create/', register, {headers}) as Observable<ILoginTokenization>;
+    return this.http.post(GLOBAL.url + 'api/user/create/', register, {headers}) as Observable<ILoginTokenization>;
   }
 
   public login(login: ILoginRequest): Observable<ILoginTokenization> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(GLOBAL.url + 'user/obtain_token/', login, {headers}) as Observable<ILoginTokenization>;
+    return this.http.post(GLOBAL.url + 'api/user/obtain_token/', login, {headers}) as Observable<ILoginTokenization>;
   }
 
   public get(id?: string): Observable<IUser> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken());
     if (id) { return this.http.post(GLOBAL.url + 'get/' + id, {headers}) as Observable<IUser>; }
-    return this.http.get(GLOBAL.url + 'user/get/', {headers}) as Observable<IUser>;
+    return this.http.get(GLOBAL.url + 'api/user/get/', {headers}) as Observable<IUser>;
   }
 
   public update(user: IUser): Observable<IUser> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken());
-    return this.http.post(GLOBAL.url + 'user/update/', user, {headers}) as Observable<IUser>;
+    return this.http.post(GLOBAL.url + 'api/user/update/', user, {headers}) as Observable<IUser>;
   }
 
   public list(page?: string): Observable<IUser[]> {

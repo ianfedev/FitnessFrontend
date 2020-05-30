@@ -11,6 +11,7 @@ export class AdminCategoryEditComponent implements OnInit {
 
   public category: ICategory;
   public title: string;
+  public edit: boolean;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -18,6 +19,7 @@ export class AdminCategoryEditComponent implements OnInit {
     private router: Router
   ) {
     this.title = 'Crear categoría';
+    this.edit = false;
     this.category = {id: 0, name: ''};
   }
 
@@ -27,19 +29,32 @@ export class AdminCategoryEditComponent implements OnInit {
         this.category = data.AdminCategoryEditGuard;
       });
       this.title = 'Editar categoría ' + this.category.name;
+      this.edit = true;
     }
   }
 
   public alterRequest(): void {
-    this.categoryService.update(this.category).subscribe(
-      category => {
-        this.router.navigate(['/admin/categories']);
-      },
+    if (this.edit) {
+      this.categoryService.update(this.category).subscribe(
+        category => {
+          this.router.navigate(['/admin/categories']);
+        },
 
-      error => {
-        console.log(error);
-      }
-    );
+        error => {
+          console.log(error);
+        }
+      );
+    } else {
+      this.categoryService.create(this.category).subscribe(
+        category => {
+          this.router.navigate(['/admin/categories']);
+        },
+
+        error => {
+          console.log(error);
+        }
+      );
+    }
   }
 
 }

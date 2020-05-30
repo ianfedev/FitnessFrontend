@@ -30,6 +30,11 @@
         </a>
       </td>
     </tr>
+    <tr *ngIf="videos.length < 1">
+      <td>
+        No hay videos creados aún.
+      </td>
+    </tr>
     </tbody>
   </table>
 </div>

@@ -22,6 +22,11 @@
         </a>
       </td>
     </tr>
+    <tr *ngIf="users.length < 1">
+      <td>
+        No hay videos creados aún.
+      </td>
+    </tr>
     </tbody>
   </table>
 </div>

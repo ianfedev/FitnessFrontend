@@ -22,27 +22,27 @@ export class GroupService {
 
   public create(body: ICategory): Observable<IGroup> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.post(GLOBAL.url + 'groups/create/', body, {headers}) as Observable<IGroup>;
+    return this.http.post(GLOBAL.url + 'api/groups/create/', body, {headers}) as Observable<IGroup>;
   }
 
   public list(): Observable<IGroup[]> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.get(GLOBAL.url + 'groups/list/', {headers}) as Observable<IGroup[]>;
+    return this.http.get(GLOBAL.url + 'api/groups/list/', {headers}) as Observable<IGroup[]>;
   }
 
   public get(id: string): Observable<IGroup> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.get(GLOBAL.url + 'groups/get/' + id + '/', {headers}) as Observable<IGroup>;
+    return this.http.get(GLOBAL.url + 'api/groups/get/' + id + '/', {headers}) as Observable<IGroup>;
   }
 
   public update(body: IGroup): Observable<IGroup> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.put(GLOBAL.url + 'groups/update/' + body.id + '/', body, {headers}) as Observable<IGroup>;
+    return this.http.put(GLOBAL.url + 'api/groups/update/' + body.id + '/', body, {headers}) as Observable<IGroup>;
   }
 
   public delete(id: string): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.userService.getToken());
-    return this.http.delete(GLOBAL.url + 'groups/delete/' + id + '/', {headers});
+    return this.http.delete(GLOBAL.url + 'api/groups/delete/' + id + '/', {headers});
   }
 
 }

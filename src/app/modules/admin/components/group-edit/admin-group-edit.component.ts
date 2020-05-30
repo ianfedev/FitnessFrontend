@@ -11,6 +11,7 @@ export class AdminGroupEditComponent implements OnInit {
 
   public group: IGroup;
   public title: string;
+  public edit: boolean;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -18,6 +19,7 @@ export class AdminGroupEditComponent implements OnInit {
     private router: Router
   ) {
     this.title = 'Crear grupo';
+    this.edit = false;
     this.group = {id: 0, name: '', admin: false, color: ''};
   }
 
@@ -27,19 +29,32 @@ export class AdminGroupEditComponent implements OnInit {
         this.group = data.AdminGroupEditGuard;
       });
       this.title = 'Editar grupo ' + this.group.name;
+      this.edit = true;
     }
   }
 
   public alterRequest(): void {
-    this.groupService.update(this.group).subscribe(
-      groups => {
-        this.router.navigate(['/admin/groups']);
-      },
+    if (this.edit) {
+      this.groupService.update(this.group).subscribe(
+        groups => {
+          this.router.navigate(['/admin/groups']);
+        },
 
-      error => {
-        console.log(error);
-      }
-    );
+        error => {
+          console.log(error);
+        }
+      );
+    } else {
+      this.groupService.create(this.group).subscribe(
+        groups => {
+          this.router.navigate(['/admin/groups']);
+        },
+
+        error => {
+          console.log(error);
+        }
+      );
+    }
   }
 
 }

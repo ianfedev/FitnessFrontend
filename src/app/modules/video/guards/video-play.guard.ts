@@ -18,10 +18,12 @@ export class VideoPlayGuard implements Resolve<IVideoPair> {
    return this.videoService.get(route.params.video).pipe(
      mergeMap(video =>
        forkJoin([this.youtubeService.get(video.id)]).pipe(
-         map(response => ({
-           video,
-           youtube: response[0].items[0]
-         }))
+         map(response => {
+           return {
+             video,
+             youtube: response[0].items[0]
+           };
+         })
        )
      )
     );

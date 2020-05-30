@@ -57,7 +57,7 @@ export class AdminVideoEditComponent implements OnInit {
             this.resetVideo();
           } else {
             this.youtubeVideo = response.items[0];
-            this.request.tag = v;
+            this.request.id = v;
           }
         },
 
