@@ -17,7 +17,7 @@ export class UserService {
   }
 
   public login(login: ILoginRequest): Observable<ILoginTokenization> {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Access-Control-Allow-Origin', '*');
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post(GLOBAL.url + 'user/obtain_token/', login, {headers}) as Observable<ILoginTokenization>;
   }
 
