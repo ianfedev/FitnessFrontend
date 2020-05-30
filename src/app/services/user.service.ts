@@ -17,7 +17,7 @@ export class UserService {
   }
 
   public login(login: ILoginRequest): Observable<ILoginTokenization> {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Access-Control-Allow-Origin', '*');
     return this.http.post(GLOBAL.url + 'user/obtain_token/', login, {headers}) as Observable<ILoginTokenization>;
   }
 
@@ -45,7 +45,7 @@ export class UserService {
   public getToken() {
     if (localStorage.getItem('token') === undefined ||
       localStorage.getItem('token') === null) { return ''; }
-    return localStorage.getItem('token');
+    return 'Bearer ' + localStorage.getItem('token');
   }
 
 }
